@@ -1,0 +1,22 @@
+version: "3"
+
+services: 
+
+  db:
+    image: postgres
+
+    environment:
+      POSTGRES_DB: database
+      POSGRES_USER: root
+      POSTGRES_PASSWORD: LucBertinLeBestBonnesVacancesDeNoel
+
+
+  flaksapp:
+    restart: always
+    build: .
+
+    ports: 
+      - "5000:5000"
+
+    depends_on:
+      - db
