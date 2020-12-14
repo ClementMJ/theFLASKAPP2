@@ -8,6 +8,8 @@ RUN pip install -r requirements.txt
 
 COPY . /app
 
+ENV FLASK_APP=app.py
+
 RUN wget https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh -P /scripts
 
 RUN chmod +x /scripts/wait-for-it.sh
